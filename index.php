@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <title>4DEV</title>
+</head>
+<body>
+   <div class="wrapper ">
+            <div class="menu">
+                <img src="img/4dev.png">
+                <a href="game.php"><button type="button" class="btn  btn-dark">GAME</button></a><br>
+                <button type="button" class="btn btn-dark">SETTINGS</button><br>
+                <button type="button" class="btn btn-dark">ABOUT US</button><br>
+            </div>
+   </div>
+</body>
+</html>
