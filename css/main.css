@@ -1,55 +1,70 @@
 @font-face {
-    font-family: 'OCRAStd';
-    src: url('../fonts/OCRAStd.ttf')
+  font-family: 'OCRAStd';
+  src: url('../fonts/OCRAStd.ttf')
 }
 
 body {
-    font-family: 'OCRAStd', serif;
-    background-color: #e7ebea;
-    background-image: url(../img/setka.jpg);
+  font-family: 'OCRAStd', serif;
+  background-color: #e7ebea;
+  background-image: url(../img/setka.jpg);
 }
 
 .wrapper {
-    width: 100%;
-    margin-top: 30px;
-}
-.main{
-    width: 74%;
-    height: 100%;
-    min-height: 1000px;
-    background: #9a9a9a;
-    float: left;
-    margin-left: 40px;
-}
-.setgame{
-    height: 100%;
-    min-height: 200px;
-    width: 20%;
-    float: left;
-    margin-left: 3%;
-}
-.menu button{
-    width: 300px;
-    height: 77px;
-    margin: 15px;
-    margin-left: 0px;
+  width: 100%;
+  margin-top: 30px;
 }
 
-.menu img{
-    width: 300px;
-    margin-top: 10%;
-    margin-bottom: 20%;
+.main {
+  width: 74%;
+  height: 570px;
+  background: #9a9a9a;
+  float: left;
+  margin-left: 40px;
 }
 
-.menu{
-    width: 100%;
-    max-width: 300px;
-    margin: 0 auto;
+.setgame {
+  height: 100%;
+  min-height: 200px;
+  width: 20%;
+  float: left;
+  margin-left: 3%;
 }
 
-.setgame{
-    padding: 15px;
+.menu button {
+  width: 300px;
+  height: 77px;
+  margin: 15px;
+  margin-left: 0px;
 }
-.setgame .btn{
-    margin-bottom: 10px;
+
+.menu img {
+  width: 300px;
+  margin-top: 10%;
+  margin-bottom: 20%;
+}
+
+.menu {
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.setgame {
+  padding: 15px;
+}
+
+.setgame .btn {
+  margin-bottom: 10px;
+}
+
+.item {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+@media (min-width: 900px) {
+  .main {
+    height: 900px;
+  }
 }
