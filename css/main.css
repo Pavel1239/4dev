@@ -80,3 +80,15 @@ body {
 .blue{
   background-color: blue;
 }
+
+.radio_but{
+    display: flex;
+}
+
+p{
+  padding-right: 5%;
+}
+
+a{
+  color: white: ;
+}
