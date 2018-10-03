@@ -16,7 +16,7 @@ body {
 
 .main {
   width: 74%;
-  height: 570px;
+  height: 95vh;
   background: #9a9a9a;
   float: left;
   margin-left: 40px;
@@ -79,10 +79,4 @@ body {
 
 .blue{
   background-color: blue;
-}
-
-@media (min-width: 900px) {
-  .main {
-    height: 900px;
-  }
 }
