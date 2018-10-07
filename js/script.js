@@ -8,7 +8,14 @@ function randomInteger(min, max) {
     this.coordX = Math.abs( Math.floor(randomInteger(40, window.innerWidth * 0.7)) );
     //console.log(this.coordX);
 	this.html = document.createElement('span');
-	this.html.className = 'item';
+	var number = randomInteger(0, 3);
+	if(number == 1) {
+		this.html.className = 'item green';
+	} else if(number == 2) {
+		this.html.className = 'item red';
+	} else if(number == 3) {
+		this.html.className = 'item blue';
+	} else this.html.className = 'item'; //если генериться 0 !!!
 	this.html.innerHTML = this.letter;
 	this.html.style.left = this.coordX + 'px';
 	return this.html;
