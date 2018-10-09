@@ -8,7 +8,14 @@ function randomInteger(min, max) {
     this.coordX = Math.abs( Math.floor(randomInteger(40, window.innerWidth * 0.7)) );
     //console.log(this.coordX);
 	this.html = document.createElement('span');
-	this.html.className = 'item';
+	var number = randomInteger(0, 3);
+	if(number == 1) {
+		this.html.className = 'item green';
+	} else if(number == 2) {
+		this.html.className = 'item red';
+	} else if(number == 3) {
+		this.html.className = 'item blue';
+	} else this.html.className = 'item'; //если генериться 0 !!!
 	this.html.innerHTML = this.letter;
 	this.html.style.left = this.coordX + 'px';
 	return this.html;
@@ -60,26 +67,20 @@ function MyGame() {
 		document.body.onkeydown = function(event){
 			if (StopGamePossible){
 				key = String.fromCharCode(event.keyCode);
-				
-				//console.log('letters ' + letters);
 
 				var count = letters.length;
-				//console.log('letters count= ' + count);
 				var rand = Math.abs(Math.floor(randomInteger(0, count)));
-				//console.log('rand(0, ' + count +') = ' + rand);
 				var str = letters.substring(rand);
-				//console.log(' str= ' + str);
 				var len = items.length;
-
+				var coincidence = false;
 				for(i = 0; i < len; i++){
-					//console.log('items.length= ' + items.length);
-					if(items[i].innerHTML == key) {					
+					if(items[i].innerHTML == key) {
+						coincidence = true;
+
 						items[i].style.top = 0 + 'px';
 						items[i].style.display = 'none';
 						
-						//console.log('substr= ' + letters.substring(0, rand));
 						letters = letters.substring(0, rand) + items[i].innerHTML + str;
-						//console.log('Result letters= ' + letters);
 
 						items.splice(i, 1);
 						len--;
@@ -87,6 +88,43 @@ function MyGame() {
 
 						points = points + 10;
 						document.getElementsByTagName('p').item(1).innerHTML = points;
+					} 
+				}
+				if (!coincidence) {
+					if (points > 0) {
+						if ((points-15) < 0) points = 0;
+						else {
+							points = points - 15;
+							document.getElementsByTagName('p').item(1).innerHTML = points;
+						}
+					} else { //////////////////////else START
+						lifes--;
+						if (lifes > 0){
+							document.getElementsByTagName('p').item(0).innerHTML = lifes;
+							}
+						else {
+							var Stop = function (){
+							clearInterval(StopBut);
+							for (i = 0; i < items.length; i++){
+								items[i].parentNode.removeChild(items[i]);
+								delete items[i];
+							}
+							document.getElementsByTagName('p').item(0).innerHTML = 5;
+							document.getElementsByTagName('p').item(1).innerHTML = 0;
+							document.getElementsByTagName('input').item(0).setAttribute('onclick','MyGame()');
+							};
+							clearInterval(StopBut);
+							alert('GAME OVER!!!   Your score = ' + points);
+							for (i = 0; i < items.length; i++){
+								items[i].parentNode.removeChild(items[i]);
+								delete items[i];
+							}
+							document.getElementsByTagName('p').item(0).innerHTML = 5;
+							document.getElementsByTagName('p').item(1).innerHTML = 0;
+							document.getElementsByTagName('input').item(0).setAttribute('onclick','MyGame()');
+							StopGamePossible = false;
+						}
+						//////////////////////////else END
 					}
 				}
 			} else return;
