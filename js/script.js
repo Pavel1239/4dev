@@ -167,3 +167,29 @@ function MyGame() {
 		return;
 	};  
 }
+
+
+ function displayResult()
+{
+document.body.style.backgroundImage="url('img/setka2.jpg')";
+document.body.style.backgroundRepeat="repeat-x"; 
+localStorage.background = document.body.style.backgroundImage="url('img/setka2.jpg')";
+
+if (localStorage.background !== undefined) {
+	        document.documentElement.style.backgroundImage = localStorage.background;
+	    }
+
+}
+
+ function ChangeBg()
+{
+document.body.style.backgroundImage="url('img/setka.jpg')";
+document.body.style.backgroundRepeat="repeat"; 
+localStorage.background = document.body.style.backgroundImage="url('img/setka.jpg')";
+
+
+if (localStorage.background !== undefined) {
+	        document.documentElement.style.backgroundImage = localStorage.background;
+	    }
+
+}

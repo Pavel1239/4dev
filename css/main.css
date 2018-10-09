@@ -7,6 +7,7 @@ body {
   font-family: 'OCRAStd', serif;
   background-color: #e7ebea;
   background-image: url(../img/setka.jpg);
+  background-repeat: repeat;
 }
 
 .wrapper {

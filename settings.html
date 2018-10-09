@@ -7,15 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/main.css">
-
+<script type="text/javascript" src="js/script.js"></script>
     <title>4DEV</title>
+<link  href="/css/<?=$_COOKIE['main'] ?: 'stand'?>.css" rel="stylesheet" type=text/css>
 
-   <script>
-    function changebg()
-{
-    document.body.style.backgroundImage = "url(../img/setka.jpg)";
-}
-    </script>
 
 </head>
 <body>
@@ -25,16 +20,16 @@
 
 
 
-                <a href="index.html"><button type="button" class="btn  btn-dark">Return to the menu</button></a>
-                
-                <button type="button" class="btn  btn-dark"  onclick='changebg()'>Change background</button>
-                   
-                    
-                    
-                
-                
+                <a href="index.html"><button type="button"  class="btn  btn-dark">Return to the menu</button></a>
+                <div class="wrapper">
+                <button type="button" class="btn  btn-dark" id="button"   onclick='ChangeBg()' >  Background1 </button>
+                <button type="button" class="btn  btn-dark" id="button" onclick='displayResult()'> Background2 </button>
 
+               
+
+                </div>
             </div>
    </div>
 </body>
 </html>
+ 
