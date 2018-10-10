@@ -92,7 +92,10 @@ function MyGame() {
 				}
 				if (!coincidence) {
 					if (points > 0) {
-						if ((points-15) < 0) points = 0;
+						if ((points-15) < 0) {
+							points = 0;
+							document.getElementsByTagName('p').item(1).innerHTML = points;
+						}
 						else {
 							points = points - 15;
 							document.getElementsByTagName('p').item(1).innerHTML = points;
